@@ -1,22 +1,21 @@
 version: 0.2
+
 phases:
-  install:
-    runtime-versions:
-      java: corretto17
-  pre_build:
-    commands:
-    - echo In the pre_build phase...
   build:
+     install: 
+      runtime-versions:
+      java: corretto11
     commands:
-    - echo Build started on `date`
+      - echo Entered the build phase...
+      - mvn package
   post_build:
     commands:
-    - echo Build completed on `date`
-    - mvn package
+      - echo Build completed successfully
 artifacts:
   files:
-   - target/file-handling.jar
-   discard-paths: yes
+    - target/*.jar
+  discard-paths: yes
+
 
 
 
