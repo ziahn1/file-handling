@@ -1,10 +1,10 @@
 version: 0.2
 
 phases:
-  build:
      install: 
       runtime-versions:
       java: corretto11
+  build:
     commands:
       - echo Entered the build phase...
       - mvn package
